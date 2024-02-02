@@ -9,7 +9,9 @@ main().catch((err) => console.log(err));
 async function main() {
   const app = express();
   app.use(cors({ origin: true }));
-
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
+  
   app.use('/campgrounds', campgroundsRouter);
 
   app.listen(3000, () => {

@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import NavBar from "./components/NavBar.jsx";
 import CampgroundIndex from "./components/CampgroundIndex.jsx";
 import CampgroundDetails from "./components/CampgroundDetails.jsx";
+import CampgroundCreate from "./components/CampgroundCreate.jsx";
 
 function App() {
   const [campgrounds, setCampgrounds] = useState([{}]);
@@ -28,6 +29,10 @@ function App() {
           <Route
             path="/all"
             element={<CampgroundIndex campgrounds={campgrounds} />}
+          />
+          <Route 
+            path="/create"
+            element={<CampgroundCreate />}
           />
           {campgrounds.map((campground, i) => (
             <Route
